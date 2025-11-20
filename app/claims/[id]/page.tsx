@@ -2,20 +2,35 @@
 
 import { useParams } from "next/navigation"
 import Link from "next/link"
-import { ArrowLeft, Calendar, CreditCard, FileText, User, AlertTriangle, Building as BuildingIcon } from "lucide-react"
+import { useState } from "react"
+import { ArrowLeft, Calendar, CreditCard, FileText, User, AlertTriangle, Building as BuildingIcon, CheckCircle, XCircle } from "lucide-react"
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/Card"
 import { Badge } from "@/components/ui/Badge"
 import { ProcessFlow } from "@/components/claims/ProcessFlow"
 import { mockClaims } from "@/app/data/mockData"
+import { cn } from "@/app/utils"
 
 export default function ClaimDetailPage() {
     const params = useParams()
     const id = params.id as string
     const claim = mockClaims.find(c => c.id === id)
+    const [claimStatus, setClaimStatus] = useState<string | undefined>(claim?.status)
 
     if (!claim) {
         return <div className="p-8">Klaim tidak ditemukan</div>
     }
+
+    const handleAccept = () => {
+        setClaimStatus("Review Diterima")
+        console.log("Claim accepted:", claim.id)
+    }
+
+    const handleReject = () => {
+        setClaimStatus("Review Ditolak")
+        console.log("Claim rejected:", claim.id)
+    }
+
+    const displayStatus = claimStatus || claim.status
 
     return (
         <div className="space-y-8">
@@ -29,10 +44,10 @@ export default function ClaimDetailPage() {
                 </div>
                 <div className="ml-auto">
                     <Badge className="text-lg px-4 py-1" variant={
-                        claim.status === "Diterima" ? "success" :
-                            claim.status === "Ditolak" ? "destructive" : "warning"
+                        displayStatus === "Diterima" || displayStatus === "Review Diterima" ? "success" :
+                            displayStatus === "Ditolak" || displayStatus === "Review Ditolak" ? "destructive" : "warning"
                     }>
-                        {claim.status}
+                        {displayStatus}
                     </Badge>
                 </div>
             </div>
@@ -47,47 +62,47 @@ export default function ClaimDetailPage() {
                         <CardContent className="space-y-4">
                             <div className="flex items-center gap-3">
                                 <div className="flex h-10 w-10 items-center justify-center rounded-full bg-slate-100 dark:bg-slate-800">
-                                    <User className="h-5 w-5 text-slate-500" />
+                                    <User className="h-5 w-5 text-slate-500 dark:text-slate-400" />
                                 </div>
                                 <div>
-                                    <p className="text-sm font-medium text-slate-500">Nama Pasien</p>
-                                    <p className="font-semibold">{claim.patientName}</p>
+                                    <p className="text-sm font-medium text-slate-500 dark:text-slate-400">Nama Pasien</p>
+                                    <p className="font-semibold dark:text-slate-100">{claim.patientName}</p>
                                 </div>
                             </div>
                             <div className="flex items-center gap-3">
                                 <div className="flex h-10 w-10 items-center justify-center rounded-full bg-slate-100 dark:bg-slate-800">
-                                    <BuildingIcon className="h-5 w-5 text-slate-500" />
+                                    <BuildingIcon className="h-5 w-5 text-slate-500 dark:text-slate-400" />
                                 </div>
                                 <div>
-                                    <p className="text-sm font-medium text-slate-500">Faskes</p>
-                                    <p className="font-semibold">{claim.faskesName}</p>
+                                    <p className="text-sm font-medium text-slate-500 dark:text-slate-400">Faskes</p>
+                                    <p className="font-semibold dark:text-slate-100">{claim.faskesName}</p>
                                 </div>
                             </div>
                             <div className="flex items-center gap-3">
                                 <div className="flex h-10 w-10 items-center justify-center rounded-full bg-slate-100 dark:bg-slate-800">
-                                    <FileText className="h-5 w-5 text-slate-500" />
+                                    <FileText className="h-5 w-5 text-slate-500 dark:text-slate-400" />
                                 </div>
                                 <div>
-                                    <p className="text-sm font-medium text-slate-500">Diagnosis</p>
-                                    <p className="font-semibold">{claim.diagnosis}</p>
+                                    <p className="text-sm font-medium text-slate-500 dark:text-slate-400">Diagnosis</p>
+                                    <p className="font-semibold dark:text-slate-100">{claim.diagnosis}</p>
                                 </div>
                             </div>
                             <div className="flex items-center gap-3">
                                 <div className="flex h-10 w-10 items-center justify-center rounded-full bg-slate-100 dark:bg-slate-800">
-                                    <Calendar className="h-5 w-5 text-slate-500" />
+                                    <Calendar className="h-5 w-5 text-slate-500 dark:text-slate-400" />
                                 </div>
                                 <div>
-                                    <p className="text-sm font-medium text-slate-500">Tanggal Masuk</p>
-                                    <p className="font-semibold">{claim.date}</p>
+                                    <p className="text-sm font-medium text-slate-500 dark:text-slate-400">Tanggal Masuk</p>
+                                    <p className="font-semibold dark:text-slate-100">{claim.date}</p>
                                 </div>
                             </div>
                             <div className="flex items-center gap-3">
                                 <div className="flex h-10 w-10 items-center justify-center rounded-full bg-slate-100 dark:bg-slate-800">
-                                    <CreditCard className="h-5 w-5 text-slate-500" />
+                                    <CreditCard className="h-5 w-5 text-slate-500 dark:text-slate-400" />
                                 </div>
                                 <div>
-                                    <p className="text-sm font-medium text-slate-500">Total Tagihan</p>
-                                    <p className="font-semibold text-emerald-600">
+                                    <p className="text-sm font-medium text-slate-500 dark:text-slate-400">Total Tagihan</p>
+                                    <p className="font-semibold text-emerald-600 dark:text-emerald-400">
                                         {new Intl.NumberFormat("id-ID", { style: "currency", currency: "IDR" }).format(claim.amount)}
                                     </p>
                                 </div>
@@ -104,11 +119,60 @@ export default function ClaimDetailPage() {
                                 </CardTitle>
                             </CardHeader>
                             <CardContent>
-                                <ul className="list-disc pl-5 text-sm text-red-700 dark:text-red-400">
+                                <ul className="space-y-3">
                                     {claim.redFlags.map((flag, i) => (
-                                        <li key={i}>{flag}</li>
+                                        <li key={i} className="flex items-start gap-2">
+                                            <Badge variant={
+                                                flag.type === "crucial" ? "destructive" :
+                                                    flag.type === "medium" ? "warning" : "secondary"
+                                            } className="mt-0.5">
+                                                {flag.type}
+                                            </Badge>
+                                            <div className="flex-1">
+                                                <div className="flex items-center justify-between">
+                                                    <p className="text-sm font-medium text-red-700 dark:text-red-400">{flag.flag_name}</p>
+                                                    <span className={cn(
+                                                        "text-sm font-bold",
+                                                        typeof flag.score === 'number' && flag.score <= 10 ? "text-emerald-600 dark:text-emerald-400" :
+                                                            typeof flag.score === 'number' && flag.score <= 30 ? "text-amber-600 dark:text-amber-400" :
+                                                                "text-red-600 dark:text-red-400"
+                                                    )}>
+                                                        +{flag.score}
+                                                    </span>
+                                                </div>
+                                                <p className="text-xs text-red-600 dark:text-red-500">{flag.message}</p>
+                                            </div>
+                                        </li>
                                     ))}
                                 </ul>
+                            </CardContent>
+                        </Card>
+                    )}
+
+                    {/* Decision Buttons for Review Status - In Left Column */}
+                    {claim.status === "Review" && !claimStatus?.startsWith("Review ") && (
+                        <Card className="border-amber-200 bg-amber-50 dark:border-amber-900 dark:bg-amber-950/20">
+                            <CardHeader>
+                                <CardTitle className="text-amber-700 dark:text-amber-400">Keputusan Verifikator</CardTitle>
+                                <CardDescription className="dark:text-amber-600">
+                                    Klaim ini memerlukan review manual.
+                                </CardDescription>
+                            </CardHeader>
+                            <CardContent>
+                                <div className="flex flex-col gap-3">
+                                    <button
+                                        onClick={handleAccept}
+                                        className="flex items-center justify-center gap-2 rounded-lg bg-emerald-600 px-4 py-3 font-semibold text-white transition-colors hover:bg-emerald-700 dark:bg-emerald-700 dark:hover:bg-emerald-600">
+                                        <CheckCircle className="h-5 w-5" />
+                                        Terima Klaim
+                                    </button>
+                                    <button
+                                        onClick={handleReject}
+                                        className="flex items-center justify-center gap-2 rounded-lg bg-red-600 px-4 py-3 font-semibold text-white transition-colors hover:bg-red-700 dark:bg-red-700 dark:hover:bg-red-600">
+                                        <XCircle className="h-5 w-5" />
+                                        Tolak Klaim
+                                    </button>
+                                </div>
                             </CardContent>
                         </Card>
                     )}

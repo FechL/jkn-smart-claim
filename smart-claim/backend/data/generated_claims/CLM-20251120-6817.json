@@ -1,0 +1,111 @@
+{
+  "claim_id": "CLM-20251120-6817",
+  "timestamp": "2025-11-20T22:50:55+07:00",
+  "patient": {
+    "resourceType": "Patient",
+    "id": "patient-82642",
+    "identifier": [
+      {
+        "system": "https://fhir.bpjs.go.id/sid/nik",
+        "value": "1604115307987325"
+      },
+      {
+        "system": "https://fhir.bpjs.go.id/sid/no-kartu",
+        "value": "7972490506642"
+      }
+    ],
+    "name": [
+      {
+        "text": "Maya Hidayat",
+        "family": "Hidayat",
+        "given": [
+          "Maya"
+        ]
+      }
+    ],
+    "telecom": [
+      {
+        "system": "phone",
+        "value": "+628524389036"
+      }
+    ],
+    "gender": "female",
+    "birthDate": "1998-04-30",
+    "address": [
+      {
+        "text": "Jl. Hayam Wuruk No. 572, Jakarta Selatan",
+        "city": "Jakarta Pusat",
+        "postalCode": "60087",
+        "country": "ID"
+      }
+    ],
+    "active": true
+  },
+  "faskes": {
+    "resourceType": "Organization",
+    "id": "org-example-488",
+    "identifier": [
+      {
+        "use": "official",
+        "system": "https://fhir.bpjs.go.id/sid/kode-faskes",
+        "value": "5847105266"
+      }
+    ],
+    "active": true,
+    "type": [
+      {
+        "coding": [
+          {
+            "system": "http://terminology.hl7.org/CodeSystem/organization-type",
+            "code": "prov",
+            "display": "Healthcare Provider"
+          }
+        ]
+      }
+    ],
+    "name": "RS Mitra Keluarga",
+    "telecom": [
+      {
+        "system": "phone",
+        "value": "+628538511870",
+        "use": "work"
+      }
+    ],
+    "address": [
+      {
+        "use": "work",
+        "type": "physical",
+        "line": [
+          "Jl. Veteran No. 38, Makassar"
+        ],
+        "city": "Tangerang",
+        "postalCode": "72423",
+        "country": "ID"
+      }
+    ]
+  },
+  "medical_data": {
+    "diagnosis": {
+      "code": "M79.3",
+      "display": "Myalgia",
+      "severity": "mild"
+    },
+    "vital_signs": {
+      "systolic_bp": 126,
+      "diastolic_bp": 77,
+      "temperature": 37.4,
+      "pulse": 65,
+      "respiratory_rate": 22
+    },
+    "lab_results": {
+      "hemoglobin": 15.5,
+      "leukocyte": 6187,
+      "platelet": 335723,
+      "hematocrit": 40
+    },
+    "claim_amount": 657297,
+    "patient_id": "patient-82642"
+  },
+  "quality_level": 1,
+  "quality_label": "good"
+}

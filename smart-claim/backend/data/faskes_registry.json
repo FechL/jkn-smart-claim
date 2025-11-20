@@ -1,0 +1,42 @@
+[
+    {
+        "id": "org-example-001",
+        "name": "RSUD Cengkareng",
+        "code": "1234567890",
+        "type": "hospital",
+        "city": "Jakarta Barat",
+        "active": true
+    },
+    {
+        "id": "org-example-002",
+        "name": "RS Harapan Kita",
+        "code": "2345678901",
+        "type": "hospital",
+        "city": "Jakarta Pusat",
+        "active": true
+    },
+    {
+        "id": "org-example-003",
+        "name": "Puskesmas Tebet",
+        "code": "3456789012",
+        "type": "puskesmas",
+        "city": "Jakarta Selatan",
+        "active": true
+    },
+    {
+        "id": "org-example-004",
+        "name": "Klinik Sehat Jaya",
+        "code": "4567890123",
+        "type": "clinic",
+        "city": "Jakarta Timur",
+        "active": true
+    },
+    {
+        "id": "org-example-005",
+        "name": "RS Pondok Indah",
+        "code": "5678901234",
+        "type": "hospital",
+        "city": "Jakarta Selatan",
+        "active": true
+    }
+]

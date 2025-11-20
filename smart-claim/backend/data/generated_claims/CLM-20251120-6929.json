@@ -1,0 +1,111 @@
+{
+  "claim_id": "CLM-20251120-6929",
+  "timestamp": "2025-11-20T22:54:07+07:00",
+  "patient": {
+    "resourceType": "Patient",
+    "id": "patient-85705",
+    "identifier": [
+      {
+        "system": "https://fhir.bpjs.go.id/sid/nik",
+        "value": "5084460502529989"
+      },
+      {
+        "system": "https://fhir.bpjs.go.id/sid/no-kartu",
+        "value": "1090380076107"
+      }
+    ],
+    "name": [
+      {
+        "text": "Kurniawan Irawan",
+        "family": "Irawan",
+        "given": [
+          "Kurniawan"
+        ]
+      }
+    ],
+    "telecom": [
+      {
+        "system": "phone",
+        "value": "+628130554387"
+      }
+    ],
+    "gender": "male",
+    "birthDate": "1970-08-21",
+    "address": [
+      {
+        "text": "Jl. Gatot Subroto No. 794, Jakarta Barat",
+        "city": "Bandung",
+        "postalCode": "31863",
+        "country": "ID"
+      }
+    ],
+    "active": true
+  },
+  "faskes": {
+    "resourceType": "Organization",
+    "id": "org-example-959",
+    "identifier": [
+      {
+        "use": "official",
+        "system": "https://fhir.bpjs.go.id/sid/kode-faskes",
+        "value": "3003821032"
+      }
+    ],
+    "active": true,
+    "type": [
+      {
+        "coding": [
+          {
+            "system": "http://terminology.hl7.org/CodeSystem/organization-type",
+            "code": "prov",
+            "display": "Healthcare Provider"
+          }
+        ]
+      }
+    ],
+    "name": "Klinik Pratama Husada",
+    "telecom": [
+      {
+        "system": "phone",
+        "value": "+628137718241",
+        "use": "work"
+      }
+    ],
+    "address": [
+      {
+        "use": "work",
+        "type": "physical",
+        "line": [
+          "Jl. Diponegoro No. 864, Tangerang"
+        ],
+        "city": "Jakarta Barat",
+        "postalCode": "69878",
+        "country": "ID"
+      }
+    ]
+  },
+  "medical_data": {
+    "diagnosis": {
+      "code": "A91",
+      "display": "Dengue hemorrhagic fever",
+      "severity": "severe"
+    },
+    "vital_signs": {
+      "systolic_bp": 162,
+      "diastolic_bp": 91,
+      "temperature": 39.1,
+      "pulse": 119,
+      "respiratory_rate": 34
+    },
+    "lab_results": {
+      "hemoglobin": 10.7,
+      "leukocyte": 3248,
+      "platelet": 77567,
+      "hematocrit": 33
+    },
+    "claim_amount": 17890122,
+    "patient_id": "patient-85705"
+  },
+  "quality_level": 2,
+  "quality_label": "medium"
+}

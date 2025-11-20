@@ -1,0 +1,16 @@
+[
+    {
+        "faskes_id": "org-example-002",
+        "severity": "moderate_violation",
+        "description": "Ditemukan klaim ganda pada bulan Januari 2024",
+        "date": "2024-01-15",
+        "penalty": "Warning"
+    },
+    {
+        "faskes_id": "org-example-006",
+        "severity": "severe_violation",
+        "description": "Upcoding berulang kali, inflasi biaya obat",
+        "date": "2023-11-20",
+        "penalty": "Suspended for 3 months"
+    }
+]

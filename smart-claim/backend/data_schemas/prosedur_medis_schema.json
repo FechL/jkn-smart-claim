@@ -1,0 +1,185 @@
+{
+    "resourceType": "Bundle",
+    "type": "collection",
+    "entry": [
+        {
+            "resource": {
+                "resourceType": "Procedure",
+                "id": "procedure-001",
+                "status": "completed",
+                "category": {
+                    "coding": [
+                        {
+                            "system": "http://snomed.info/sct",
+                            "code": "103693007",
+                            "display": "Diagnostic procedure"
+                        }
+                    ]
+                },
+                "code": {
+                    "coding": [
+                        {
+                            "system": "http://hl7.org/fhir/sid/icd-9-cm",
+                            "code": "99.04",
+                            "display": "Transfusion of packed cells"
+                        }
+                    ],
+                    "text": "Transfusi Packed Red Cell"
+                },
+                "subject": {
+                    "reference": "Patient/patient-12345"
+                },
+                "encounter": {
+                    "reference": "Encounter/encounter-001"
+                },
+                "performedDateTime": "2024-11-20T16:00:00+07:00",
+                "performer": [
+                    {
+                        "actor": {
+                            "reference": "Practitioner/practitioner-001",
+                            "display": "dr. Budi Santoso, Sp.PD"
+                        }
+                    }
+                ],
+                "reasonCode": [
+                    {
+                        "coding": [
+                            {
+                                "system": "http://hl7.org/fhir/sid/icd-10",
+                                "code": "A91",
+                                "display": "Dengue hemorrhagic fever"
+                            }
+                        ],
+                        "text": "Demam Berdarah Dengue dengan trombositopenia berat"
+                    }
+                ],
+                "note": [
+                    {
+                        "text": "Rasional Klinis: Pasien mengalami trombositopenia berat (platelet 95.000/uL) dengan tanda perdarahan (petekie). Transfusi PRC diberikan untuk mencegah perdarahan lebih lanjut dan memperbaiki kondisi hematologi pasien."
+                    }
+                ]
+            }
+        },
+        {
+            "resource": {
+                "resourceType": "Procedure",
+                "id": "procedure-002",
+                "status": "completed",
+                "category": {
+                    "coding": [
+                        {
+                            "system": "http://snomed.info/sct",
+                            "code": "387713003",
+                            "display": "Surgical procedure"
+                        }
+                    ]
+                },
+                "code": {
+                    "coding": [
+                        {
+                            "system": "http://hl7.org/fhir/sid/icd-9-cm",
+                            "code": "38.93",
+                            "display": "Venous catheterization"
+                        }
+                    ],
+                    "text": "Pemasangan Infus"
+                },
+                "subject": {
+                    "reference": "Patient/patient-12345"
+                },
+                "encounter": {
+                    "reference": "Encounter/encounter-001"
+                },
+                "performedDateTime": "2024-11-20T10:30:00+07:00",
+                "performer": [
+                    {
+                        "actor": {
+                            "reference": "Practitioner/nurse-001",
+                            "display": "Ns. Dewi Lestari, S.Kep"
+                        }
+                    }
+                ],
+                "reasonCode": [
+                    {
+                        "text": "Pemberian cairan intravena dan obat-obatan"
+                    }
+                ],
+                "note": [
+                    {
+                        "text": "Rasional Klinis: Pasien mengalami dehidrasi akibat demam tinggi dan asupan oral yang kurang. Pemasangan infus diperlukan untuk rehidrasi dan pemberian obat intravena."
+                    }
+                ]
+            }
+        },
+        {
+            "resource": {
+                "resourceType": "MedicationRequest",
+                "id": "medication-001",
+                "status": "active",
+                "intent": "order",
+                "medicationCodeableConcept": {
+                    "coding": [
+                        {
+                            "system": "http://sys-ids.kemkes.go.id/kfa",
+                            "code": "93001234",
+                            "display": "Paracetamol 500mg Tablet"
+                        }
+                    ],
+                    "text": "Paracetamol 500mg"
+                },
+                "subject": {
+                    "reference": "Patient/patient-12345"
+                },
+                "encounter": {
+                    "reference": "Encounter/encounter-001"
+                },
+                "authoredOn": "2024-11-20T10:30:00+07:00",
+                "requester": {
+                    "reference": "Practitioner/practitioner-001",
+                    "display": "dr. Budi Santoso, Sp.PD"
+                },
+                "reasonCode": [
+                    {
+                        "text": "Demam tinggi"
+                    }
+                ],
+                "dosageInstruction": [
+                    {
+                        "text": "3 x 500mg per hari",
+                        "timing": {
+                            "repeat": {
+                                "frequency": 3,
+                                "period": 1,
+                                "periodUnit": "d"
+                            }
+                        },
+                        "route": {
+                            "coding": [
+                                {
+                                    "system": "http://snomed.info/sct",
+                                    "code": "26643006",
+                                    "display": "Oral route"
+                                }
+                            ]
+                        },
+                        "doseAndRate": [
+                            {
+                                "doseQuantity": {
+                                    "value": 500,
+                                    "unit": "mg",
+                                    "system": "http://unitsofmeasure.org",
+                                    "code": "mg"
+                                }
+                            }
+                        ]
+                    }
+                ],
+                "note": [
+                    {
+                        "text": "Rasional Klinis: Antipiretik untuk menurunkan demam dan mengurangi ketidaknyamanan pasien."
+                    }
+                ]
+            }
+        }
+    ]
+}

@@ -1,0 +1,111 @@
+{
+  "claim_id": "CLM-20251120-4838",
+  "timestamp": "2025-11-20T22:56:49+07:00",
+  "patient": {
+    "resourceType": "Patient",
+    "id": "patient-52101",
+    "identifier": [
+      {
+        "system": "https://fhir.bpjs.go.id/sid/nik",
+        "value": "7116870207950219"
+      },
+      {
+        "system": "https://fhir.bpjs.go.id/sid/no-kartu",
+        "value": "1745086976542"
+      }
+    ],
+    "name": [
+      {
+        "text": "Budi Permana",
+        "family": "Permana",
+        "given": [
+          "Budi"
+        ]
+      }
+    ],
+    "telecom": [
+      {
+        "system": "phone",
+        "value": "+628522570369"
+      }
+    ],
+    "gender": "male",
+    "birthDate": "1999-10-28",
+    "address": [
+      {
+        "text": "Jl. Gatot Subroto No. 198, Jakarta Pusat",
+        "city": "Bandung",
+        "postalCode": "58890",
+        "country": "ID"
+      }
+    ],
+    "active": true
+  },
+  "faskes": {
+    "resourceType": "Organization",
+    "id": "org-example-310",
+    "identifier": [
+      {
+        "use": "official",
+        "system": "https://fhir.bpjs.go.id/sid/kode-faskes",
+        "value": "2603374696"
+      }
+    ],
+    "active": true,
+    "type": [
+      {
+        "coding": [
+          {
+            "system": "http://terminology.hl7.org/CodeSystem/organization-type",
+            "code": "prov",
+            "display": "Healthcare Provider"
+          }
+        ]
+      }
+    ],
+    "name": "Klinik Sehat Jaya",
+    "telecom": [
+      {
+        "system": "phone",
+        "value": "+628221123975",
+        "use": "work"
+      }
+    ],
+    "address": [
+      {
+        "use": "work",
+        "type": "physical",
+        "line": [
+          "Jl. Pahlawan No. 672, Depok"
+        ],
+        "city": "Jakarta Pusat",
+        "postalCode": "54635",
+        "country": "ID"
+      }
+    ]
+  },
+  "medical_data": {
+    "diagnosis": {
+      "code": "A09",
+      "display": "Gastroenteritis",
+      "severity": "mild"
+    },
+    "vital_signs": {
+      "systolic_bp": 115,
+      "diastolic_bp": 78,
+      "temperature": 36.2,
+      "pulse": 90,
+      "respiratory_rate": 21
+    },
+    "lab_results": {
+      "hemoglobin": 9.7,
+      "leukocyte": 2156,
+      "platelet": 80329,
+      "hematocrit": 38
+    },
+    "claim_amount": 570663,
+    "patient_id": "patient-52101"
+  },
+  "quality_level": 2,
+  "quality_label": "medium"
+}

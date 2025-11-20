@@ -1,0 +1,1 @@
+["diagnosis_severity", "systolic_bp", "diastolic_bp", "temperature", "pulse", "respiratory_rate", "hemoglobin", "leukocyte", "platelet", "hematocrit", "claim_amount", "bp_ratio", "fever", "tachycardia", "tachypnea", "anemia", "leukopenia", "thrombocytopenia", "amount_severity_mismatch", "vitals_severity_mismatch"]

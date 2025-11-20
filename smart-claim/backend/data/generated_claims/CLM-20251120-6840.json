@@ -1,0 +1,111 @@
+{
+  "claim_id": "CLM-20251120-6840",
+  "timestamp": "2025-11-20T22:51:54+07:00",
+  "patient": {
+    "resourceType": "Patient",
+    "id": "patient-65665",
+    "identifier": [
+      {
+        "system": "https://fhir.bpjs.go.id/sid/nik",
+        "value": "2739415406878635"
+      },
+      {
+        "system": "https://fhir.bpjs.go.id/sid/no-kartu",
+        "value": "9213013062838"
+      }
+    ],
+    "name": [
+      {
+        "text": "Nur Wijaya",
+        "family": "Wijaya",
+        "given": [
+          "Nur"
+        ]
+      }
+    ],
+    "telecom": [
+      {
+        "system": "phone",
+        "value": "+628219948885"
+      }
+    ],
+    "gender": "male",
+    "birthDate": "1996-06-03",
+    "address": [
+      {
+        "text": "Jl. Gajah Mada No. 420, Jakarta Selatan",
+        "city": "Jakarta Pusat",
+        "postalCode": "13930",
+        "country": "ID"
+      }
+    ],
+    "active": true
+  },
+  "faskes": {
+    "resourceType": "Organization",
+    "id": "org-example-996",
+    "identifier": [
+      {
+        "use": "official",
+        "system": "https://fhir.bpjs.go.id/sid/kode-faskes",
+        "value": "4007296619"
+      }
+    ],
+    "active": true,
+    "type": [
+      {
+        "coding": [
+          {
+            "system": "http://terminology.hl7.org/CodeSystem/organization-type",
+            "code": "prov",
+            "display": "Healthcare Provider"
+          }
+        ]
+      }
+    ],
+    "name": "Puskesmas Tebet",
+    "telecom": [
+      {
+        "system": "phone",
+        "value": "+628539716782",
+        "use": "work"
+      }
+    ],
+    "address": [
+      {
+        "use": "work",
+        "type": "physical",
+        "line": [
+          "Jl. Sudirman No. 280, Semarang"
+        ],
+        "city": "Jakarta Pusat",
+        "postalCode": "54206",
+        "country": "ID"
+      }
+    ]
+  },
+  "medical_data": {
+    "diagnosis": {
+      "code": "K35.8",
+      "display": "Acute appendicitis",
+      "severity": "severe"
+    },
+    "vital_signs": {
+      "systolic_bp": 162,
+      "diastolic_bp": 106,
+      "temperature": 39.5,
+      "pulse": 103,
+      "respiratory_rate": 34
+    },
+    "lab_results": {
+      "hemoglobin": 10.2,
+      "leukocyte": 2360,
+      "platelet": 85500,
+      "hematocrit": 31
+    },
+    "claim_amount": 6575219,
+    "patient_id": "patient-65665"
+  },
+  "quality_level": 1,
+  "quality_label": "good"
+}

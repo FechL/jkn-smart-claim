@@ -120,8 +120,8 @@ export default function FraudCheckPage() {
                                         <TableCell>
                                             <div className="flex flex-wrap gap-1">
                                                 {claim.redFlags.slice(0, 2).map((flag, i) => (
-                                                    <Badge key={i} variant="outline" className="text-[10px] border-red-200 text-red-700 bg-red-50">
-                                                        {flag}
+                                                    <Badge key={i} variant="outline" className="text-[10px] border-red-200 text-red-700 bg-red-50 dark:border-red-800 dark:text-red-400 dark:bg-red-950/30">
+                                                        {flag.flag_name}
                                                     </Badge>
                                                 ))}
                                                 {claim.redFlags.length > 2 && (

@@ -1,0 +1,146 @@
+[
+  {
+    "claim_id": "CLM-20251120-6929",
+    "timestamp": "2025-11-20T22:54:08.624632",
+    "patient_name": "Kurniawan Irawan",
+    "faskes_name": "Klinik Pratama Husada",
+    "diagnosis": "Dengue hemorrhagic fever",
+    "claim_amount": 17890122,
+    "fraud_scores": {
+      "patient": 0,
+      "faskes": 0,
+      "ai": 3,
+      "total": 0
+    },
+    "red_flags": [
+      {
+        "is_valid": true,
+        "score": 0,
+        "type": "crucial",
+        "flag_name": "NIK Valid",
+        "message": "NIK valid"
+      },
+      {
+        "is_valid": true,
+        "score": 0,
+        "type": "crucial",
+        "flag_name": "Nomor Kartu JKN Valid",
+        "message": "Nomor kartu JKN valid"
+      },
+      {
+        "is_registered": false,
+        "score": "auto_reject",
+        "type": "crucial",
+        "flag_name": "Faskes Tidak Terdaftar",
+        "message": "Faskes dengan ID org-example-959 tidak terdaftar dalam sistem"
+      },
+      {
+        "score": 3,
+        "probability": 0.031,
+        "type": "flex",
+        "flag_name": "AI Fraud Detection",
+        "message": "Risiko fraud rendah berdasarkan analisis AI"
+      }
+    ],
+    "decision": "REJECTED",
+    "decision_reason": "Auto reject due to crucial red flag violations",
+    "auto_reject": true,
+    "requires_review": false
+  },
+  {
+    "claim_id": "CLM-20251120-4838",
+    "timestamp": "2025-11-20T22:56:49.946532",
+    "patient_name": "Budi Permana",
+    "faskes_name": "Klinik Sehat Jaya",
+    "diagnosis": "Gastroenteritis",
+    "claim_amount": 570663,
+    "fraud_scores": {
+      "patient": 0,
+      "faskes": 0,
+      "ai": 98,
+      "total": 0
+    },
+    "red_flags": [
+      {
+        "is_valid": true,
+        "score": 0,
+        "type": "crucial",
+        "flag_name": "NIK Valid",
+        "message": "NIK valid"
+      },
+      {
+        "is_valid": true,
+        "score": 0,
+        "type": "crucial",
+        "flag_name": "Nomor Kartu JKN Valid",
+        "message": "Nomor kartu JKN valid"
+      },
+      {
+        "is_registered": false,
+        "score": "auto_reject",
+        "type": "crucial",
+        "flag_name": "Faskes Tidak Terdaftar",
+        "message": "Faskes dengan ID org-example-310 tidak terdaftar dalam sistem"
+      },
+      {
+        "score": 98,
+        "probability": 0.982,
+        "type": "flex",
+        "flag_name": "AI Fraud Detection",
+        "message": "Risiko fraud tinggi berdasarkan analisis AI"
+      }
+    ],
+    "decision": "REJECTED",
+    "decision_reason": "Auto reject due to crucial red flag violations",
+    "auto_reject": true,
+    "requires_review": false
+  },
+  {
+    "claim_id": "CLM-20251120-7539",
+    "timestamp": "2025-11-20T23:00:27.448591",
+    "patient_name": "Zaki Wijaya",
+    "faskes_name": "Puskesmas Tebet",
+    "diagnosis": "Gastroenteritis",
+    "claim_amount": 648930,
+    "fraud_scores": {
+      "patient": 0,
+      "faskes": 0,
+      "ai": 5,
+      "total": 0
+    },
+    "red_flags": [
+      {
+        "is_valid": true,
+        "score": 0,
+        "type": "crucial",
+        "flag_name": "NIK Valid",
+        "message": "NIK valid"
+      },
+      {
+        "is_valid": true,
+        "score": 0,
+        "type": "crucial",
+        "flag_name": "Nomor Kartu JKN Valid",
+        "message": "Nomor kartu JKN valid"
+      },
+      {
+        "is_registered": false,
+        "score": "auto_reject",
+        "type": "crucial",
+        "flag_name": "Faskes Tidak Terdaftar",
+        "message": "Faskes dengan ID org-example-237 tidak terdaftar dalam sistem"
+      },
+      {
+        "score": 5,
+        "probability": 0.05,
+        "type": "flex",
+        "flag_name": "AI Fraud Detection",
+        "message": "Risiko fraud rendah berdasarkan analisis AI"
+      }
+    ],
+    "decision": "REJECTED",
+    "decision_reason": "Auto reject due to crucial red flag violations",
+    "auto_reject": true,
+    "requires_review": false
+  }
+]

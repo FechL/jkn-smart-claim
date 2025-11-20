@@ -1,0 +1,111 @@
+{
+  "claim_id": "CLM-20251120-8569",
+  "timestamp": "2025-11-20T21:49:54+07:00",
+  "patient": {
+    "resourceType": "Patient",
+    "id": "patient-94912",
+    "identifier": [
+      {
+        "system": "https://fhir.bpjs.go.id/sid/nik",
+        "value": "2021391803631822"
+      },
+      {
+        "system": "https://fhir.bpjs.go.id/sid/no-kartu",
+        "value": "0521670512093"
+      }
+    ],
+    "name": [
+      {
+        "text": "Made Santoso",
+        "family": "Santoso",
+        "given": [
+          "Made"
+        ]
+      }
+    ],
+    "telecom": [
+      {
+        "system": "phone",
+        "value": "+628577373851"
+      }
+    ],
+    "gender": "male",
+    "birthDate": "1959-03-04",
+    "address": [
+      {
+        "text": "Jl. Kartini No. 828, Jakarta Barat",
+        "city": "Surabaya",
+        "postalCode": "46843",
+        "country": "ID"
+      }
+    ],
+    "active": true
+  },
+  "faskes": {
+    "resourceType": "Organization",
+    "id": "org-example-986",
+    "identifier": [
+      {
+        "use": "official",
+        "system": "https://fhir.bpjs.go.id/sid/kode-faskes",
+        "value": "2631941121"
+      }
+    ],
+    "active": true,
+    "type": [
+      {
+        "coding": [
+          {
+            "system": "http://terminology.hl7.org/CodeSystem/organization-type",
+            "code": "prov",
+            "display": "Healthcare Provider"
+          }
+        ]
+      }
+    ],
+    "name": "Klinik Sehat Jaya",
+    "telecom": [
+      {
+        "system": "phone",
+        "value": "+628526161782",
+        "use": "work"
+      }
+    ],
+    "address": [
+      {
+        "use": "work",
+        "type": "physical",
+        "line": [
+          "Jl. Hayam Wuruk No. 735, Depok"
+        ],
+        "city": "Jakarta Barat",
+        "postalCode": "45609",
+        "country": "ID"
+      }
+    ]
+  },
+  "medical_data": {
+    "diagnosis": {
+      "code": "E11",
+      "display": "Type 2 diabetes mellitus",
+      "severity": "moderate"
+    },
+    "vital_signs": {
+      "systolic_bp": 166,
+      "diastolic_bp": 96,
+      "temperature": 38.3,
+      "pulse": 109,
+      "respiratory_rate": 32
+    },
+    "lab_results": {
+      "hemoglobin": 14.4,
+      "leukocyte": 4135,
+      "platelet": 181268,
+      "hematocrit": 49
+    },
+    "claim_amount": 2251400,
+    "patient_id": "patient-94912"
+  },
+  "quality_level": 1,
+  "quality_label": "good"
+}

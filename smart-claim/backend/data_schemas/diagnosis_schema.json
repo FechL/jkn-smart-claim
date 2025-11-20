@@ -1,0 +1,128 @@
+{
+    "resourceType": "Condition",
+    "id": "diagnosis-001",
+    "clinicalStatus": {
+        "coding": [
+            {
+                "system": "http://terminology.hl7.org/CodeSystem/condition-clinical",
+                "code": "active",
+                "display": "Active"
+            }
+        ]
+    },
+    "verificationStatus": {
+        "coding": [
+            {
+                "system": "http://terminology.hl7.org/CodeSystem/condition-ver-status",
+                "code": "confirmed",
+                "display": "Confirmed"
+            }
+        ]
+    },
+    "category": [
+        {
+            "coding": [
+                {
+                    "system": "http://terminology.hl7.org/CodeSystem/condition-category",
+                    "code": "encounter-diagnosis",
+                    "display": "Encounter Diagnosis"
+                }
+            ]
+        }
+    ],
+    "severity": {
+        "coding": [
+            {
+                "system": "http://snomed.info/sct",
+                "code": "24484000",
+                "display": "Severe"
+            }
+        ]
+    },
+    "code": {
+        "coding": [
+            {
+                "system": "http://hl7.org/fhir/sid/icd-10",
+                "code": "A91",
+                "display": "Dengue hemorrhagic fever"
+            }
+        ],
+        "text": "Demam Berdarah Dengue Grade II"
+    },
+    "bodySite": [
+        {
+            "coding": [
+                {
+                    "system": "http://snomed.info/sct",
+                    "code": "281158006",
+                    "display": "Entire blood"
+                }
+            ],
+            "text": "Sistemik"
+        }
+    ],
+    "subject": {
+        "reference": "Patient/patient-12345",
+        "display": "Ahmad Setiawan"
+    },
+    "encounter": {
+        "reference": "Encounter/encounter-001"
+    },
+    "onsetDateTime": "2024-11-17T00:00:00+07:00",
+    "recordedDate": "2024-11-20T10:30:00+07:00",
+    "recorder": {
+        "reference": "Practitioner/practitioner-001",
+        "display": "dr. Budi Santoso, Sp.PD"
+    },
+    "evidence": [
+        {
+            "code": [
+                {
+                    "coding": [
+                        {
+                            "system": "http://snomed.info/sct",
+                            "code": "386661006",
+                            "display": "Fever"
+                        }
+                    ],
+                    "text": "Demam tinggi"
+                }
+            ]
+        },
+        {
+            "code": [
+                {
+                    "coding": [
+                        {
+                            "system": "http://snomed.info/sct",
+                            "code": "271807003",
+                            "display": "Petechiae"
+                        }
+                    ],
+                    "text": "Petekie pada ekstremitas"
+                }
+            ]
+        },
+        {
+            "detail": [
+                {
+                    "reference": "Observation/lab-platelet",
+                    "display": "Trombositopenia (95.000/uL)"
+                }
+            ]
+        },
+        {
+            "detail": [
+                {
+                    "reference": "Observation/lab-leukocyte",
+                    "display": "Leukopenia (3.200/uL)"
+                }
+            ]
+        }
+    ],
+    "note": [
+        {
+            "text": "Diagnosis ditegakkan berdasarkan kriteria WHO untuk Demam Berdarah Dengue: demam tinggi mendadak, manifestasi perdarahan (petekie), trombositopenia (<100.000/uL), dan bukti kebocoran plasma. Pasien memenuhi kriteria DHF Grade II dengan adanya perdarahan spontan."
+        }
+    ]
+}

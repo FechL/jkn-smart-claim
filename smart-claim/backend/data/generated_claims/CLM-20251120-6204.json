@@ -1,0 +1,111 @@
+{
+  "claim_id": "CLM-20251120-6204",
+  "timestamp": "2025-11-20T20:21:47+07:00",
+  "patient": {
+    "resourceType": "Patient",
+    "id": "patient-82164",
+    "identifier": [
+      {
+        "system": "https://fhir.bpjs.go.id/sid/nik",
+        "value": "8849806108831874"
+      },
+      {
+        "system": "https://fhir.bpjs.go.id/sid/no-kartu",
+        "value": "4227268162971"
+      }
+    ],
+    "name": [
+      {
+        "text": "Eko Suryanto",
+        "family": "Suryanto",
+        "given": [
+          "Eko"
+        ]
+      }
+    ],
+    "telecom": [
+      {
+        "system": "phone",
+        "value": "+628565713637"
+      }
+    ],
+    "gender": "male",
+    "birthDate": "1961-10-27",
+    "address": [
+      {
+        "text": "Jl. Pahlawan No. 769, Bandung",
+        "city": "Jakarta Pusat",
+        "postalCode": "62210",
+        "country": "ID"
+      }
+    ],
+    "active": true
+  },
+  "faskes": {
+    "resourceType": "Organization",
+    "id": "org-example-422",
+    "identifier": [
+      {
+        "use": "official",
+        "system": "https://fhir.bpjs.go.id/sid/kode-faskes",
+        "value": "7801172038"
+      }
+    ],
+    "active": true,
+    "type": [
+      {
+        "coding": [
+          {
+            "system": "http://terminology.hl7.org/CodeSystem/organization-type",
+            "code": "prov",
+            "display": "Healthcare Provider"
+          }
+        ]
+      }
+    ],
+    "name": "RS Pondok Indah",
+    "telecom": [
+      {
+        "system": "phone",
+        "value": "+628561448789",
+        "use": "work"
+      }
+    ],
+    "address": [
+      {
+        "use": "work",
+        "type": "physical",
+        "line": [
+          "Jl. Pemuda No. 903, Jakarta Utara"
+        ],
+        "city": "Jakarta Pusat",
+        "postalCode": "49572",
+        "country": "ID"
+      }
+    ]
+  },
+  "medical_data": {
+    "diagnosis": {
+      "code": "I10",
+      "display": "Essential (primary) hypertension",
+      "severity": "moderate"
+    },
+    "vital_signs": {
+      "systolic_bp": 172,
+      "diastolic_bp": 94,
+      "temperature": 39.6,
+      "pulse": 120,
+      "respiratory_rate": 31
+    },
+    "lab_results": {
+      "hemoglobin": 15.1,
+      "leukocyte": 6685,
+      "platelet": 379048,
+      "hematocrit": 42
+    },
+    "claim_amount": 1865334,
+    "patient_id": "patient-82164"
+  },
+  "quality_level": 2,
+  "quality_label": "medium"
+}

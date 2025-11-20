@@ -1,0 +1,40 @@
+{
+    "resourceType": "Patient",
+    "id": "patient-12345",
+    "identifier": [
+        {
+            "system": "https://fhir.bpjs.go.id/sid/nik",
+            "value": "3201234567890123"
+        },
+        {
+            "system": "https://fhir.bpjs.go.id/sid/no-kartu",
+            "value": "0001234567890"
+        }
+    ],
+    "name": [
+        {
+            "text": "Ahmad Setiawan",
+            "family": "Setiawan",
+            "given": [
+                "Ahmad"
+            ]
+        }
+    ],
+    "telecom": [
+        {
+            "system": "phone",
+            "value": "+62812345678"
+        }
+    ],
+    "gender": "male",
+    "birthDate": "1980-05-15",
+    "address": [
+        {
+            "text": "Jl. Merdeka No. 123, Jakarta Pusat",
+            "city": "Jakarta Pusat",
+            "postalCode": "10110",
+            "country": "ID"
+        }
+    ],
+    "active": true
+}

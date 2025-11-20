@@ -1,0 +1,78 @@
+{
+    "resourceType": "Organization",
+    "id": "org-example-001",
+    "identifier": [
+        {
+            "use": "official",
+            "system": "https://fhir.bpjs.go.id/sid/kode-faskes",
+            "value": "1234567890"
+        }
+    ],
+    "active": true,
+    "type": [
+        {
+            "coding": [
+                {
+                    "system": "http://terminology.hl7.org/CodeSystem/organization-type",
+                    "code": "prov",
+                    "display": "Healthcare Provider"
+                }
+            ]
+        }
+    ],
+    "name": "RSUD Cengkareng",
+    "alias": [
+        "RS Cengkareng"
+    ],
+    "telecom": [
+        {
+            "system": "phone",
+            "value": "+62215551234",
+            "use": "work"
+        },
+        {
+            "system": "email",
+            "value": "info@rsudcengkareng.go.id",
+            "use": "work"
+        }
+    ],
+    "address": [
+        {
+            "use": "work",
+            "type": "physical",
+            "line": [
+                "Jl. Kamal Raya No. 1"
+            ],
+            "city": "Jakarta Barat",
+            "postalCode": "11730",
+            "country": "ID",
+            "extension": [
+                {
+                    "url": "https://fhir.kemkes.go.id/r4/StructureDefinition/administrativeCode",
+                    "extension": [
+                        {
+                            "url": "province",
+                            "valueCode": "31"
+                        },
+                        {
+                            "url": "city",
+                            "valueCode": "3173"
+                        },
+                        {
+                            "url": "district",
+                            "valueCode": "317301"
+                        },
+                        {
+                            "url": "village",
+                            "valueCode": "31730101"
+                        }
+                    ]
+                }
+            ]
+        }
+    ],
+    "partOf": {
+        "reference": "Organization/parent-org-id",
+        "display": "Dinas Kesehatan DKI Jakarta"
+    }
+}

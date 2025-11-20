@@ -89,8 +89,8 @@ export default function ClaimsPage() {
                                     <TableCell>
                                         <span className={cn(
                                             "font-bold",
-                                            claim.score > 90 ? "text-emerald-600" :
-                                                claim.score < 40 ? "text-red-600" : "text-amber-600"
+                                            claim.score <= 10 ? "text-emerald-600 dark:text-emerald-400" :
+                                                claim.score <= 60 ? "text-amber-600 dark:text-amber-400" : "text-red-600 dark:text-red-400"
                                         )}>
                                             {claim.score}
                                         </span>

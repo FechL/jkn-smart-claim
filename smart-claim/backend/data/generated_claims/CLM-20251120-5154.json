@@ -1,0 +1,111 @@
+{
+  "claim_id": "CLM-20251120-5154",
+  "timestamp": "2025-11-20T20:21:43+07:00",
+  "patient": {
+    "resourceType": "Patient",
+    "id": "patient-15205",
+    "identifier": [
+      {
+        "system": "https://fhir.bpjs.go.id/sid/nik",
+        "value": "5510604402685521"
+      },
+      {
+        "system": "https://fhir.bpjs.go.id/sid/no-kartu",
+        "value": "4548985671561"
+      }
+    ],
+    "name": [
+      {
+        "text": "Oki Hermawan",
+        "family": "Hermawan",
+        "given": [
+          "Oki"
+        ]
+      }
+    ],
+    "telecom": [
+      {
+        "system": "phone",
+        "value": "+628573407769"
+      }
+    ],
+    "gender": "male",
+    "birthDate": "2005-06-20",
+    "address": [
+      {
+        "text": "Jl. Gajah Mada No. 381, Jakarta Pusat",
+        "city": "Jakarta Pusat",
+        "postalCode": "64483",
+        "country": "ID"
+      }
+    ],
+    "active": true
+  },
+  "faskes": {
+    "resourceType": "Organization",
+    "id": "org-example-251",
+    "identifier": [
+      {
+        "use": "official",
+        "system": "https://fhir.bpjs.go.id/sid/kode-faskes",
+        "value": "6206042732"
+      }
+    ],
+    "active": true,
+    "type": [
+      {
+        "coding": [
+          {
+            "system": "http://terminology.hl7.org/CodeSystem/organization-type",
+            "code": "prov",
+            "display": "Healthcare Provider"
+          }
+        ]
+      }
+    ],
+    "name": "RS Siloam",
+    "telecom": [
+      {
+        "system": "phone",
+        "value": "+628128751440",
+        "use": "work"
+      }
+    ],
+    "address": [
+      {
+        "use": "work",
+        "type": "physical",
+        "line": [
+          "Jl. Thamrin No. 189, Jakarta Timur"
+        ],
+        "city": "Jakarta Pusat",
+        "postalCode": "78544",
+        "country": "ID"
+      }
+    ]
+  },
+  "medical_data": {
+    "diagnosis": {
+      "code": "M79.3",
+      "display": "Myalgia",
+      "severity": "mild"
+    },
+    "vital_signs": {
+      "systolic_bp": 130,
+      "diastolic_bp": 85,
+      "temperature": 37.0,
+      "pulse": 64,
+      "respiratory_rate": 18
+    },
+    "lab_results": {
+      "hemoglobin": 15.2,
+      "leukocyte": 4932,
+      "platelet": 268968,
+      "hematocrit": 48
+    },
+    "claim_amount": 285615,
+    "patient_id": "patient-15205"
+  },
+  "quality_level": 1,
+  "quality_label": "good"
+}
