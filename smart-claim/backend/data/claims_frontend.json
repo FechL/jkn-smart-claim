@@ -1,77 +1,41 @@
 {
-  "id": "CLM-20251120-7539",
-  "claim_id": "CLM-20251120-7539",
-  "timestamp": "2025-11-20T23:00:27.448591",
-  "date": "20 Nov 2025",
-  "patient_name": "Zaki Wijaya",
-  "patientName": "Zaki Wijaya",
-  "faskes_name": "Puskesmas Tebet",
-  "faskesName": "Puskesmas Tebet",
-  "diagnosis": "Gastroenteritis",
-  "claim_amount": 648930,
-  "amount": 648930,
+  "id": "CLM-20251122-3812",
+  "claim_id": "CLM-20251122-3812",
+  "timestamp": "2025-11-22T00:32:42.797106",
+  "date": "22 Nov 2025",
+  "patient_name": "Rina Wibowo",
+  "patientName": "Rina Wibowo",
+  "faskes_name": "Klinik Pratama Husada",
+  "faskesName": "Klinik Pratama Husada",
+  "diagnosis": "Myalgia",
+  "claim_amount": 530994,
+  "amount": 530994,
   "fraud_scores": {
     "patient": 0,
     "faskes": 0,
-    "ai": 5,
-    "total": 0
+    "ai": 8,
+    "total": 8
   },
-  "score": 0,
+  "score": 8,
   "red_flags": [
-    {
-      "type": "crucial",
-      "flag_name": "NIK Valid",
-      "score": 0,
-      "message": "NIK valid"
-    },
-    {
-      "type": "crucial",
-      "flag_name": "Nomor Kartu JKN Valid",
-      "score": 0,
-      "message": "Nomor kartu JKN valid"
-    },
-    {
-      "type": "crucial",
-      "flag_name": "Faskes Tidak Terdaftar",
-      "score": "auto_reject",
-      "message": "Faskes dengan ID org-example-237 tidak terdaftar dalam sistem"
-    },
     {
       "type": "flex",
       "flag_name": "AI Fraud Detection",
-      "score": 5,
+      "score": 8,
       "message": "Risiko fraud rendah berdasarkan analisis AI"
     }
   ],
   "redFlags": [
     {
-      "type": "crucial",
-      "flag_name": "NIK Valid",
-      "score": 0,
-      "message": "NIK valid"
-    },
-    {
-      "type": "crucial",
-      "flag_name": "Nomor Kartu JKN Valid",
-      "score": 0,
-      "message": "Nomor kartu JKN valid"
-    },
-    {
-      "type": "crucial",
-      "flag_name": "Faskes Tidak Terdaftar",
-      "score": "auto_reject",
-      "message": "Faskes dengan ID org-example-237 tidak terdaftar dalam sistem"
-    },
-    {
       "type": "flex",
       "flag_name": "AI Fraud Detection",
-      "score": 5,
+      "score": 8,
       "message": "Risiko fraud rendah berdasarkan analisis AI"
     }
   ],
-  "decision": "REJECTED",
-  "status": "Ditolak",
-  "decision_reason": "Auto reject due to crucial red flag violations",
-  "auto_reject": true,
+  "decision": "ACCEPTED",
+  "status": "Diterima",
+  "decision_reason": "Auto accept (score: 8 < 10)",
+  "auto_reject": false,
   "requires_review": false
 }

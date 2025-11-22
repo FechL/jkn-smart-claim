@@ -2,7 +2,7 @@
 
 import { useParams } from "next/navigation"
 import Link from "next/link"
-import { useState } from "react"
+import { useState, useEffect } from "react"
 import { ArrowLeft, Calendar, CreditCard, FileText, User, AlertTriangle, Building as BuildingIcon, CheckCircle, XCircle } from "lucide-react"
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/Card"
 import { Badge } from "@/components/ui/Badge"
@@ -14,19 +14,33 @@ export default function ClaimDetailPage() {
     const params = useParams()
     const id = params.id as string
     const claim = mockClaims.find(c => c.id === id)
-    const [claimStatus, setClaimStatus] = useState<string | undefined>(claim?.status)
+    const [claimStatus, setClaimStatus] = useState<"Diterima" | "Ditolak" | "Review" | "Review Diterima" | "Review Ditolak" | undefined>(claim?.status)
+
+    // Load verification status from localStorage on mount
+    useEffect(() => {
+        if (claim) {
+            const savedStatus = localStorage.getItem(`claim-status-${claim.id}`)
+            if (savedStatus) {
+                setClaimStatus(savedStatus as typeof claimStatus)
+            }
+        }
+    }, [claim])
 
     if (!claim) {
         return <div className="p-8">Klaim tidak ditemukan</div>
     }
 
-    const handleAccept = () => {
-        setClaimStatus("Review Diterima")
+    const handleAccept = async () => {
+        const newStatus = "Review Diterima"
+        setClaimStatus(newStatus)
+        localStorage.setItem(`claim-status-${claim.id}`, newStatus)
         console.log("Claim accepted:", claim.id)
     }
 
-    const handleReject = () => {
-        setClaimStatus("Review Ditolak")
+    const handleReject = async () => {
+        const newStatus = "Review Ditolak"
+        setClaimStatus(newStatus)
+        localStorage.setItem(`claim-status-${claim.id}`, newStatus)
         console.log("Claim rejected:", claim.id)
     }
 
@@ -150,7 +164,7 @@ export default function ClaimDetailPage() {
                     )}
 
                     {/* Decision Buttons for Review Status - In Left Column */}
-                    {claim.status === "Review" && !claimStatus?.startsWith("Review ") && (
+                    {!claimStatus?.startsWith("Review ") && claim.status === "Review" && (
                         <Card className="border-amber-200 bg-amber-50 dark:border-amber-900 dark:bg-amber-950/20">
                             <CardHeader>
                                 <CardTitle className="text-amber-700 dark:text-amber-400">Keputusan Verifikator</CardTitle>
@@ -186,7 +200,7 @@ export default function ClaimDetailPage() {
                             <CardDescription>Visualisasi perjalanan klaim melalui sistem Smart Claim</CardDescription>
                         </CardHeader>
                         <CardContent>
-                            <ProcessFlow status={claim.status} score={claim.score} />
+                            <ProcessFlow status={displayStatus} score={claim.score} />
                         </CardContent>
                     </Card>
                 </div>

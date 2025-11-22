@@ -1,6 +1,6 @@
 "use client"
 
-import { useState } from "react"
+import { useState, useEffect } from "react"
 import Link from "next/link"
 import { cn } from "@/app/utils"
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/Card"
@@ -12,14 +12,33 @@ import { Search, Filter } from "lucide-react"
 export default function ClaimsPage() {
     const [searchTerm, setSearchTerm] = useState("")
     const [statusFilter, setStatusFilter] = useState<string>("All")
+    const [claimStatuses, setClaimStatuses] = useState<Record<string, string>>({})
+
+    // Load all claim statuses from localStorage on mount
+    useEffect(() => {
+        const statuses: Record<string, string> = {}
+        mockClaims.forEach(claim => {
+            const savedStatus = localStorage.getItem(`claim-status-${claim.id}`)
+            if (savedStatus) {
+                statuses[claim.id] = savedStatus
+            }
+        })
+        setClaimStatuses(statuses)
+    }, [])
+
+    // Helper function to get current status (from localStorage or original)
+    const getClaimStatus = (claimId: string, originalStatus: string) => {
+        return claimStatuses[claimId] || originalStatus
+    }
 
     const filteredClaims = mockClaims.filter(claim => {
+        const currentStatus = getClaimStatus(claim.id, claim.status)
         const matchesSearch =
             claim.patientName.toLowerCase().includes(searchTerm.toLowerCase()) ||
             claim.id.toLowerCase().includes(searchTerm.toLowerCase()) ||
             claim.faskesName.toLowerCase().includes(searchTerm.toLowerCase())
 
-        const matchesStatus = statusFilter === "All" || claim.status === statusFilter
+        const matchesStatus = statusFilter === "All" || currentStatus === statusFilter
 
         return matchesSearch && matchesStatus
     })
@@ -58,6 +77,8 @@ export default function ClaimsPage() {
                                 <option value="Diterima">Diterima</option>
                                 <option value="Ditolak">Ditolak</option>
                                 <option value="Review">Review</option>
+                                <option value="Review Diterima">Review Diterima</option>
+                                <option value="Review Ditolak">Review Ditolak</option>
                             </select>
                         </div>
                     </div>
@@ -78,41 +99,44 @@ export default function ClaimsPage() {
                             </TableRow>
                         </TableHeader>
                         <TableBody>
-                            {filteredClaims.map((claim) => (
-                                <TableRow key={claim.id}>
-                                    <TableCell className="font-medium">{claim.id}</TableCell>
-                                    <TableCell>{claim.patientName}</TableCell>
-                                    <TableCell>{claim.faskesName}</TableCell>
-                                    <TableCell>{claim.diagnosis}</TableCell>
-                                    <TableCell>{claim.date}</TableCell>
-                                    <TableCell>{new Intl.NumberFormat("id-ID", { style: "currency", currency: "IDR" }).format(claim.amount)}</TableCell>
-                                    <TableCell>
-                                        <span className={cn(
-                                            "font-bold",
-                                            claim.score <= 10 ? "text-emerald-600 dark:text-emerald-400" :
-                                                claim.score <= 60 ? "text-amber-600 dark:text-amber-400" : "text-red-600 dark:text-red-400"
-                                        )}>
-                                            {claim.score}
-                                        </span>
-                                    </TableCell>
-                                    <TableCell>
-                                        <Badge variant={
-                                            claim.status === "Diterima" ? "success" :
-                                                claim.status === "Ditolak" ? "destructive" : "warning"
-                                        }>
-                                            {claim.status}
-                                        </Badge>
-                                    </TableCell>
-                                    <TableCell className="text-right">
-                                        <Link
-                                            href={`/claims/${claim.id}`}
-                                            className="text-sm font-medium text-emerald-600 hover:underline"
-                                        >
-                                            Detail
-                                        </Link>
-                                    </TableCell>
-                                </TableRow>
-                            ))}
+                            {filteredClaims.map((claim) => {
+                                const currentStatus = getClaimStatus(claim.id, claim.status)
+                                return (
+                                    <TableRow key={claim.id}>
+                                        <TableCell className="font-medium">{claim.id}</TableCell>
+                                        <TableCell>{claim.patientName}</TableCell>
+                                        <TableCell>{claim.faskesName}</TableCell>
+                                        <TableCell>{claim.diagnosis}</TableCell>
+                                        <TableCell>{claim.date}</TableCell>
+                                        <TableCell>{new Intl.NumberFormat("id-ID", { style: "currency", currency: "IDR" }).format(claim.amount)}</TableCell>
+                                        <TableCell>
+                                            <span className={cn(
+                                                "font-bold",
+                                                claim.score <= 10 ? "text-emerald-600 dark:text-emerald-400" :
+                                                    claim.score <= 60 ? "text-amber-600 dark:text-amber-400" : "text-red-600 dark:text-red-400"
+                                            )}>
+                                                {claim.score}
+                                            </span>
+                                        </TableCell>
+                                        <TableCell>
+                                            <Badge variant={
+                                                currentStatus === "Diterima" || currentStatus === "Review Diterima" ? "success" :
+                                                    currentStatus === "Ditolak" || currentStatus === "Review Ditolak" ? "destructive" : "warning"
+                                            }>
+                                                {currentStatus}
+                                            </Badge>
+                                        </TableCell>
+                                        <TableCell className="text-right">
+                                            <Link
+                                                href={`/claims/${claim.id}`}
+                                                className="text-sm font-medium text-emerald-600 hover:underline"
+                                            >
+                                                Detail
+                                            </Link>
+                                        </TableCell>
+                                    </TableRow>
+                                )
+                            })}
                         </TableBody>
                     </Table>
                 </CardContent>

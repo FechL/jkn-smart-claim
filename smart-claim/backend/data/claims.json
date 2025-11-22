@@ -45,7 +45,8 @@
     "decision": "REJECTED",
     "decision_reason": "Auto reject due to crucial red flag violations",
     "auto_reject": true,
-    "requires_review": false
+    "requires_review": false,
+    "status": "Review Diterima"
   },
   {
     "claim_id": "CLM-20251120-4838",
@@ -141,6 +142,906 @@
     "decision": "REJECTED",
     "decision_reason": "Auto reject due to crucial red flag violations",
     "auto_reject": true,
+    "requires_review": false
+  },
+  {
+    "claim_id": "CLM-20251120-1693",
+    "timestamp": "2025-11-20T23:39:01.266150",
+    "patient_name": "Putri Maulana",
+    "faskes_name": "RSUD Tangerang",
+    "diagnosis": "Myalgia",
+    "claim_amount": 958957,
+    "fraud_scores": {
+      "patient": 0,
+      "faskes": 0,
+      "ai": 89,
+      "total": 0
+    },
+    "red_flags": [
+      {
+        "is_registered": false,
+        "score": 100,
+        "type": "crucial",
+        "flag_name": "Faskes Tidak Terdaftar",
+        "message": "Faskes dengan ID org-example-009 tidak terdaftar dalam sistem"
+      },
+      {
+        "score": 89,
+        "probability": 0.899,
+        "type": "flex",
+        "flag_name": "AI Fraud Detection",
+        "message": "Risiko fraud tinggi berdasarkan analisis AI"
+      }
+    ],
+    "decision": "REJECTED",
+    "decision_reason": "Auto reject due to crucial red flag violations",
+    "auto_reject": true,
+    "requires_review": false
+  },
+  {
+    "claim_id": "CLM-20251120-8446",
+    "timestamp": "2025-11-20T23:41:50.601257",
+    "patient_name": "Putri Santoso",
+    "faskes_name": "RSUD Cengkareng",
+    "diagnosis": "Dengue hemorrhagic fever",
+    "claim_amount": 17757874,
+    "fraud_scores": {
+      "patient": 0,
+      "faskes": 0,
+      "ai": 99,
+      "total": 99
+    },
+    "red_flags": [
+      {
+        "score": 99,
+        "probability": 0.993,
+        "type": "flex",
+        "flag_name": "AI Fraud Detection",
+        "message": "Risiko fraud tinggi berdasarkan analisis AI"
+      }
+    ],
+    "decision": "REJECTED",
+    "decision_reason": "Auto reject (score: 99 > 60)",
+    "auto_reject": false,
+    "requires_review": false
+  },
+  {
+    "claim_id": "CLM-20251120-2401",
+    "timestamp": "2025-11-20T23:42:30.638211",
+    "patient_name": "Umar Permana",
+    "faskes_name": "Puskesmas Cikini",
+    "diagnosis": "Acute upper respiratory infection",
+    "claim_amount": 881531,
+    "fraud_scores": {
+      "patient": 0,
+      "faskes": 0,
+      "ai": 2,
+      "total": 2
+    },
+    "red_flags": [
+      {
+        "score": 2,
+        "probability": 0.029,
+        "type": "flex",
+        "flag_name": "AI Fraud Detection",
+        "message": "Risiko fraud rendah berdasarkan analisis AI"
+      }
+    ],
+    "decision": "ACCEPTED",
+    "decision_reason": "Auto accept (score: 2 < 10)",
+    "auto_reject": false,
+    "requires_review": false
+  },
+  {
+    "claim_id": "CLM-20251120-4005",
+    "timestamp": "2025-11-20T23:43:22.025664",
+    "patient_name": "Rudi Maulana",
+    "faskes_name": "RSUD Cengkareng",
+    "diagnosis": "Pneumonia, unspecified",
+    "claim_amount": 5716180,
+    "fraud_scores": {
+      "patient": 0,
+      "faskes": 0,
+      "ai": 28,
+      "total": 28
+    },
+    "red_flags": [
+      {
+        "score": 28,
+        "probability": 0.286,
+        "type": "flex",
+        "flag_name": "AI Fraud Detection",
+        "message": "Risiko fraud rendah berdasarkan analisis AI"
+      }
+    ],
+    "decision": "NEEDS_REVIEW",
+    "decision_reason": "Manual review required (score: 28 in range 10-60)",
+    "auto_reject": false,
+    "requires_review": true
+  },
+  {
+    "claim_id": "CLM-20251120-8609",
+    "timestamp": "2025-11-20T23:43:47.609699",
+    "patient_name": "Indra Irawan",
+    "faskes_name": "Puskesmas Cikini",
+    "diagnosis": "Essential (primary) hypertension",
+    "claim_amount": 1512995,
+    "fraud_scores": {
+      "patient": 0,
+      "faskes": 0,
+      "ai": 37,
+      "total": 0
+    },
+    "red_flags": [
+      {
+        "is_registered": false,
+        "score": 100,
+        "type": "crucial",
+        "flag_name": "Faskes Tidak Terdaftar",
+        "message": "Faskes dengan ID org-example-001 tidak terdaftar dalam sistem"
+      },
+      {
+        "score": 37,
+        "probability": 0.377,
+        "type": "flex",
+        "flag_name": "AI Fraud Detection",
+        "message": "Risiko fraud sedang berdasarkan analisis AI"
+      }
+    ],
+    "decision": "REJECTED",
+    "decision_reason": "Auto reject due to crucial red flag violations",
+    "auto_reject": true,
+    "requires_review": false
+  },
+  {
+    "claim_id": "CLM-20251120-5348",
+    "timestamp": "2025-11-20T23:44:30.510142",
+    "patient_name": "Nur Wibowo",
+    "faskes_name": "Puskesmas Tebet",
+    "diagnosis": "Myalgia",
+    "claim_amount": 599001,
+    "fraud_scores": {
+      "patient": 0,
+      "faskes": 0,
+      "ai": 77,
+      "total": 0
+    },
+    "red_flags": [
+      {
+        "is_valid": false,
+        "score": 100,
+        "type": "crucial",
+        "flag_name": "NIK Invalid",
+        "message": "NIK harus 16 digit, ditemukan 14 digit"
+      },
+      {
+        "is_valid": false,
+        "score": 100,
+        "type": "crucial",
+        "flag_name": "Nomor Kartu JKN Invalid",
+        "message": "Nomor kartu JKN harus 13 digit, ditemukan 11 digit"
+      },
+      {
+        "is_registered": false,
+        "score": 100,
+        "type": "crucial",
+        "flag_name": "Faskes Tidak Terdaftar",
+        "message": "Faskes dengan ID org-example-005 tidak terdaftar dalam sistem"
+      },
+      {
+        "score": 77,
+        "probability": 0.778,
+        "type": "flex",
+        "flag_name": "AI Fraud Detection",
+        "message": "Risiko fraud tinggi berdasarkan analisis AI"
+      }
+    ],
+    "decision": "REJECTED",
+    "decision_reason": "Auto reject due to crucial red flag violations",
+    "auto_reject": true,
+    "requires_review": false
+  },
+  {
+    "claim_id": "CLM-20251120-1492",
+    "timestamp": "2025-11-20T23:44:41.259726",
+    "patient_name": "Joko Gunawan",
+    "faskes_name": "RSUD Cengkareng",
+    "diagnosis": "Essential (primary) hypertension",
+    "claim_amount": 4441986,
+    "fraud_scores": {
+      "patient": 0,
+      "faskes": 0,
+      "ai": 6,
+      "total": 0
+    },
+    "red_flags": [
+      {
+        "is_registered": false,
+        "score": 100,
+        "type": "crucial",
+        "flag_name": "Faskes Tidak Terdaftar",
+        "message": "Faskes dengan ID org-example-004 tidak terdaftar dalam sistem"
+      },
+      {
+        "score": 6,
+        "probability": 0.068,
+        "type": "flex",
+        "flag_name": "AI Fraud Detection",
+        "message": "Risiko fraud rendah berdasarkan analisis AI"
+      }
+    ],
+    "decision": "REJECTED",
+    "decision_reason": "Auto reject due to crucial red flag violations",
+    "auto_reject": true,
+    "requires_review": false
+  },
+  {
+    "claim_id": "CLM-20251120-2710",
+    "timestamp": "2025-11-20T23:45:33.145414",
+    "patient_name": "Nur Ramadan",
+    "faskes_name": "RSUD Tangerang",
+    "diagnosis": "Acute appendicitis",
+    "claim_amount": 6357303,
+    "fraud_scores": {
+      "patient": 0,
+      "faskes": 0,
+      "ai": 98,
+      "total": 0
+    },
+    "red_flags": [
+      {
+        "is_registered": false,
+        "score": 100,
+        "type": "crucial",
+        "flag_name": "Faskes Tidak Terdaftar",
+        "message": "Faskes dengan ID org-example-006 tidak terdaftar dalam sistem"
+      },
+      {
+        "score": 98,
+        "probability": 0.988,
+        "type": "flex",
+        "flag_name": "AI Fraud Detection",
+        "message": "Risiko fraud tinggi berdasarkan analisis AI"
+      }
+    ],
+    "decision": "REJECTED",
+    "decision_reason": "Auto reject due to crucial red flag violations",
+    "auto_reject": true,
+    "requires_review": false
+  },
+  {
+    "claim_id": "CLM-20251120-7809",
+    "timestamp": "2025-11-20T23:48:59.220036",
+    "patient_name": "Indah Firmansyah",
+    "faskes_name": "Puskesmas Tebet",
+    "diagnosis": "Fever, unspecified",
+    "claim_amount": 403881,
+    "fraud_scores": {
+      "patient": 0,
+      "faskes": 0,
+      "ai": 95,
+      "total": 95
+    },
+    "red_flags": [
+      {
+        "score": 95,
+        "probability": 0.955,
+        "type": "flex",
+        "flag_name": "AI Fraud Detection",
+        "message": "Risiko fraud tinggi berdasarkan analisis AI"
+      }
+    ],
+    "decision": "REJECTED",
+    "decision_reason": "Auto reject (score: 95 > 60)",
+    "auto_reject": false,
+    "requires_review": false
+  },
+  {
+    "claim_id": "CLM-20251120-9745",
+    "timestamp": "2025-11-20T23:49:26.296082",
+    "patient_name": "Yuni Utomo",
+    "faskes_name": "Puskesmas Tebet",
+    "diagnosis": "Fever, unspecified",
+    "claim_amount": 273903,
+    "fraud_scores": {
+      "patient": 0,
+      "faskes": 0,
+      "ai": 94,
+      "total": 0
+    },
+    "red_flags": [
+      {
+        "is_registered": false,
+        "score": 100,
+        "type": "crucial",
+        "flag_name": "Faskes Tidak Terdaftar",
+        "message": "Faskes dengan ID org-example-003 tidak terdaftar dalam sistem"
+      },
+      {
+        "score": 94,
+        "probability": 0.94,
+        "type": "flex",
+        "flag_name": "AI Fraud Detection",
+        "message": "Risiko fraud tinggi berdasarkan analisis AI"
+      }
+    ],
+    "decision": "REJECTED",
+    "decision_reason": "Auto reject due to crucial red flag violations",
+    "auto_reject": true,
+    "requires_review": false
+  },
+  {
+    "claim_id": "CLM-20251120-3363",
+    "timestamp": "2025-11-20T23:50:00.943222",
+    "patient_name": "Budi Kurniawan",
+    "faskes_name": "Puskesmas Cikini",
+    "diagnosis": "Pneumonia, unspecified",
+    "claim_amount": 16774456,
+    "fraud_scores": {
+      "patient": 0,
+      "faskes": 0,
+      "ai": 55,
+      "total": 55
+    },
+    "red_flags": [
+      {
+        "score": 55,
+        "probability": 0.56,
+        "type": "flex",
+        "flag_name": "AI Fraud Detection",
+        "message": "Risiko fraud sedang berdasarkan analisis AI"
+      }
+    ],
+    "decision": "NEEDS_REVIEW",
+    "decision_reason": "Manual review required (score: 55 in range 10-60)",
+    "auto_reject": false,
+    "requires_review": true
+  },
+  {
+    "claim_id": "CLM-20251120-2727",
+    "timestamp": "2025-11-20T23:56:09.760828",
+    "patient_name": "Eko Utomo",
+    "faskes_name": "RS Harapan Kita",
+    "diagnosis": "Essential (primary) hypertension",
+    "claim_amount": 1604310,
+    "fraud_scores": {
+      "patient": 0,
+      "faskes": 0,
+      "ai": 5,
+      "total": 5
+    },
+    "red_flags": [
+      {
+        "score": 5,
+        "probability": 0.052,
+        "type": "flex",
+        "flag_name": "AI Fraud Detection",
+        "message": "Risiko fraud rendah berdasarkan analisis AI"
+      }
+    ],
+    "decision": "ACCEPTED",
+    "decision_reason": "Auto accept (score: 5 < 10)",
+    "auto_reject": false,
+    "requires_review": false
+  },
+  {
+    "claim_id": "CLM-20251120-3630",
+    "timestamp": "2025-11-20T23:57:09.316234",
+    "patient_name": "Ahmad Kurniawan",
+    "faskes_name": "RSUD Tangerang",
+    "diagnosis": "Acute upper respiratory infection",
+    "claim_amount": 351546,
+    "fraud_scores": {
+      "patient": 0,
+      "faskes": 0,
+      "ai": 2,
+      "total": 2
+    },
+    "red_flags": [
+      {
+        "score": 2,
+        "probability": 0.021,
+        "type": "flex",
+        "flag_name": "AI Fraud Detection",
+        "message": "Risiko fraud rendah berdasarkan analisis AI"
+      }
+    ],
+    "decision": "ACCEPTED",
+    "decision_reason": "Auto accept (score: 2 < 10)",
+    "auto_reject": false,
+    "requires_review": false
+  },
+  {
+    "claim_id": "CLM-20251120-9479",
+    "timestamp": "2025-11-20T23:58:11.763026",
+    "patient_name": "Kurniawan Nugroho",
+    "faskes_name": "RS Pondok Indah",
+    "diagnosis": "Acute appendicitis",
+    "claim_amount": 14455757,
+    "fraud_scores": {
+      "patient": 0,
+      "faskes": 0,
+      "ai": 15,
+      "total": 15
+    },
+    "red_flags": [
+      {
+        "score": 15,
+        "probability": 0.154,
+        "type": "flex",
+        "flag_name": "AI Fraud Detection",
+        "message": "Risiko fraud rendah berdasarkan analisis AI"
+      }
+    ],
+    "decision": "NEEDS_REVIEW",
+    "decision_reason": "Manual review required (score: 15 in range 10-60)",
+    "auto_reject": false,
+    "requires_review": true
+  },
+  {
+    "claim_id": "CLM-20251120-2710",
+    "timestamp": "2025-11-20T23:59:55.185273",
+    "patient_name": "Kartika Setiawan",
+    "faskes_name": "Puskesmas Tebet",
+    "diagnosis": "Fever, unspecified",
+    "claim_amount": 549340,
+    "fraud_scores": {
+      "patient": 0,
+      "faskes": 0,
+      "ai": 4,
+      "total": 4
+    },
+    "red_flags": [
+      {
+        "score": 4,
+        "probability": 0.045,
+        "type": "flex",
+        "flag_name": "AI Fraud Detection",
+        "message": "Risiko fraud rendah berdasarkan analisis AI"
+      }
+    ],
+    "decision": "ACCEPTED",
+    "decision_reason": "Auto accept (score: 4 < 10)",
+    "auto_reject": false,
+    "requires_review": false
+  },
+  {
+    "claim_id": "CLM-20251121-7971",
+    "timestamp": "2025-11-21T00:00:30.964500",
+    "patient_name": "Yuni Hermawan",
+    "faskes_name": "RS Mitra Keluarga",
+    "diagnosis": "Dengue hemorrhagic fever",
+    "claim_amount": 15364701,
+    "fraud_scores": {
+      "patient": 0,
+      "faskes": 0,
+      "ai": 100,
+      "total": 100
+    },
+    "red_flags": [
+      {
+        "score": 100,
+        "probability": 1,
+        "type": "flex",
+        "flag_name": "AI Fraud Detection",
+        "message": "Risiko fraud tinggi berdasarkan analisis AI"
+      }
+    ],
+    "decision": "REJECTED",
+    "decision_reason": "Auto reject (score: 100 > 60)",
+    "auto_reject": false,
+    "requires_review": false
+  },
+  {
+    "claim_id": "CLM-20251121-5596",
+    "timestamp": "2025-11-21T00:00:45.295742",
+    "patient_name": "Indra Permana",
+    "faskes_name": "RSUD Cengkareng",
+    "diagnosis": "Gastroenteritis",
+    "claim_amount": 243398,
+    "fraud_scores": {
+      "patient": 0,
+      "faskes": 0,
+      "ai": 1,
+      "total": 1
+    },
+    "red_flags": [
+      {
+        "score": 1,
+        "probability": 0.012,
+        "type": "flex",
+        "flag_name": "AI Fraud Detection",
+        "message": "Risiko fraud rendah berdasarkan analisis AI"
+      }
+    ],
+    "decision": "ACCEPTED",
+    "decision_reason": "Auto accept (score: 1 < 10)",
+    "auto_reject": false,
+    "requires_review": false
+  },
+  {
+    "claim_id": "CLM-20251121-2582",
+    "timestamp": "2025-11-21T00:01:50.521927",
+    "patient_name": "Citra Santoso",
+    "faskes_name": "RS Siloam",
+    "diagnosis": "Pneumonia, unspecified",
+    "claim_amount": 7327335,
+    "fraud_scores": {
+      "patient": 0,
+      "faskes": 0,
+      "ai": 6,
+      "total": 0
+    },
+    "red_flags": [
+      {
+        "is_valid": false,
+        "score": 100,
+        "type": "crucial",
+        "flag_name": "Nomor Kartu JKN Invalid",
+        "message": "Nomor kartu JKN harus 13 digit, ditemukan 12 digit"
+      },
+      {
+        "score": 6,
+        "probability": 0.064,
+        "type": "flex",
+        "flag_name": "AI Fraud Detection",
+        "message": "Risiko fraud rendah berdasarkan analisis AI"
+      }
+    ],
+    "decision": "REJECTED",
+    "decision_reason": "Auto reject due to crucial red flag violations",
+    "auto_reject": true,
+    "requires_review": false
+  },
+  {
+    "claim_id": "CLM-20251121-4711",
+    "timestamp": "2025-11-21T00:02:19.313506",
+    "patient_name": "Kartika Gunawan",
+    "faskes_name": "RS Harapan Kita",
+    "diagnosis": "Gastroenteritis",
+    "claim_amount": 481896,
+    "fraud_scores": {
+      "patient": 0,
+      "faskes": 0,
+      "ai": 85,
+      "total": 85
+    },
+    "red_flags": [
+      {
+        "score": 85,
+        "probability": 0.859,
+        "type": "flex",
+        "flag_name": "AI Fraud Detection",
+        "message": "Risiko fraud tinggi berdasarkan analisis AI"
+      }
+    ],
+    "decision": "REJECTED",
+    "decision_reason": "Auto reject (score: 85 > 60)",
+    "auto_reject": false,
+    "requires_review": false
+  },
+  {
+    "claim_id": "CLM-20251121-9034",
+    "timestamp": "2025-11-21T00:05:01.887800",
+    "patient_name": "Bunga Ramadan",
+    "faskes_name": "Puskesmas Cikini",
+    "diagnosis": "Acute upper respiratory infection",
+    "claim_amount": 776023,
+    "fraud_scores": {
+      "patient": 0,
+      "faskes": 0,
+      "ai": 5,
+      "total": 5
+    },
+    "red_flags": [
+      {
+        "score": 5,
+        "probability": 0.058,
+        "type": "flex",
+        "flag_name": "AI Fraud Detection",
+        "message": "Risiko fraud rendah berdasarkan analisis AI"
+      }
+    ],
+    "decision": "ACCEPTED",
+    "decision_reason": "Auto accept (score: 5 < 10)",
+    "auto_reject": false,
+    "requires_review": false
+  },
+  {
+    "claim_id": "CLM-20251121-3608",
+    "timestamp": "2025-11-21T00:06:36.360062",
+    "patient_name": "Oki Wibowo",
+    "faskes_name": "RSUD Tangerang",
+    "diagnosis": "Cerebral infarction",
+    "claim_amount": 13844600,
+    "fraud_scores": {
+      "patient": 0,
+      "faskes": 0,
+      "ai": 1,
+      "total": 1
+    },
+    "red_flags": [
+      {
+        "score": 1,
+        "probability": 0.019,
+        "type": "flex",
+        "flag_name": "AI Fraud Detection",
+        "message": "Risiko fraud rendah berdasarkan analisis AI"
+      }
+    ],
+    "decision": "ACCEPTED",
+    "decision_reason": "Auto accept (score: 1 < 10)",
+    "auto_reject": false,
+    "requires_review": false
+  },
+  {
+    "claim_id": "CLM-20251121-9057",
+    "timestamp": "2025-11-21T00:07:29.751534",
+    "patient_name": "Indra Nugroho",
+    "faskes_name": "RSUD Cengkareng",
+    "diagnosis": "Type 2 diabetes mellitus",
+    "claim_amount": 3837835,
+    "fraud_scores": {
+      "patient": 0,
+      "faskes": 0,
+      "ai": 63,
+      "total": 63
+    },
+    "red_flags": [
+      {
+        "score": 63,
+        "probability": 0.639,
+        "type": "flex",
+        "flag_name": "AI Fraud Detection",
+        "message": "Risiko fraud tinggi berdasarkan analisis AI"
+      }
+    ],
+    "decision": "REJECTED",
+    "decision_reason": "Auto reject (score: 63 > 60)",
+    "auto_reject": false,
+    "requires_review": false
+  },
+  {
+    "claim_id": "CLM-20251121-3793",
+    "timestamp": "2025-11-21T00:08:03.077340",
+    "patient_name": "Ahmad Nugroho",
+    "faskes_name": "Puskesmas Tebet",
+    "diagnosis": "Essential (primary) hypertension",
+    "claim_amount": 4619602,
+    "fraud_scores": {
+      "patient": 0,
+      "faskes": 0,
+      "ai": 5,
+      "total": 5
+    },
+    "red_flags": [
+      {
+        "score": 5,
+        "probability": 0.051,
+        "type": "flex",
+        "flag_name": "AI Fraud Detection",
+        "message": "Risiko fraud rendah berdasarkan analisis AI"
+      }
+    ],
+    "decision": "ACCEPTED",
+    "decision_reason": "Auto accept (score: 5 < 10)",
+    "auto_reject": false,
+    "requires_review": false
+  },
+  {
+    "claim_id": "CLM-20251121-5318",
+    "timestamp": "2025-11-21T00:08:58.638599",
+    "patient_name": "Joko Permana",
+    "faskes_name": "Klinik Sehat Jaya",
+    "diagnosis": "Pneumonia, unspecified",
+    "claim_amount": 18201647,
+    "fraud_scores": {
+      "patient": 0,
+      "faskes": 0,
+      "ai": 4,
+      "total": 4
+    },
+    "red_flags": [
+      {
+        "score": 4,
+        "probability": 0.044,
+        "type": "flex",
+        "flag_name": "AI Fraud Detection",
+        "message": "Risiko fraud rendah berdasarkan analisis AI"
+      }
+    ],
+    "decision": "ACCEPTED",
+    "decision_reason": "Auto accept (score: 4 < 10)",
+    "auto_reject": false,
+    "requires_review": false
+  },
+  {
+    "claim_id": "CLM-20251121-2363",
+    "timestamp": "2025-11-21T00:09:23.558558",
+    "patient_name": "Kartika Wijaya",
+    "faskes_name": "RS Siloam",
+    "diagnosis": "Dengue hemorrhagic fever",
+    "claim_amount": 19680068,
+    "fraud_scores": {
+      "patient": 0,
+      "faskes": 0,
+      "ai": 7,
+      "total": 7
+    },
+    "red_flags": [
+      {
+        "score": 7,
+        "probability": 0.075,
+        "type": "flex",
+        "flag_name": "AI Fraud Detection",
+        "message": "Risiko fraud rendah berdasarkan analisis AI"
+      }
+    ],
+    "decision": "ACCEPTED",
+    "decision_reason": "Auto accept (score: 7 < 10)",
+    "auto_reject": false,
+    "requires_review": false
+  },
+  {
+    "claim_id": "CLM-20251121-3358",
+    "timestamp": "2025-11-21T00:10:11.079127",
+    "patient_name": "Tono Hakim",
+    "faskes_name": "Klinik Pratama Husada",
+    "diagnosis": "Acute appendicitis",
+    "claim_amount": 16593403,
+    "fraud_scores": {
+      "patient": 0,
+      "faskes": 0,
+      "ai": 100,
+      "total": 100
+    },
+    "red_flags": [
+      {
+        "score": 100,
+        "probability": 1,
+        "type": "flex",
+        "flag_name": "AI Fraud Detection",
+        "message": "Risiko fraud tinggi berdasarkan analisis AI"
+      }
+    ],
+    "decision": "REJECTED",
+    "decision_reason": "Auto reject (score: 100 > 60)",
+    "auto_reject": false,
+    "requires_review": false
+  },
+  {
+    "claim_id": "CLM-20251121-8543",
+    "timestamp": "2025-11-21T00:10:33.994167",
+    "patient_name": "Wawan Hakim",
+    "faskes_name": "RS Siloam",
+    "diagnosis": "Gastroenteritis",
+    "claim_amount": 377914,
+    "fraud_scores": {
+      "patient": 0,
+      "faskes": 0,
+      "ai": 4,
+      "total": 4
+    },
+    "red_flags": [
+      {
+        "score": 4,
+        "probability": 0.044,
+        "type": "flex",
+        "flag_name": "AI Fraud Detection",
+        "message": "Risiko fraud rendah berdasarkan analisis AI"
+      }
+    ],
+    "decision": "ACCEPTED",
+    "decision_reason": "Auto accept (score: 4 < 10)",
+    "auto_reject": false,
+    "requires_review": false
+  },
+  {
+    "claim_id": "CLM-20251121-6596",
+    "timestamp": "2025-11-21T00:11:12.164769",
+    "patient_name": "Sari Kurniawan",
+    "faskes_name": "RS Siloam",
+    "diagnosis": "Acute upper respiratory infection",
+    "claim_amount": 407244,
+    "fraud_scores": {
+      "patient": 0,
+      "faskes": 0,
+      "ai": 3,
+      "total": 3
+    },
+    "red_flags": [
+      {
+        "score": 3,
+        "probability": 0.039,
+        "type": "flex",
+        "flag_name": "AI Fraud Detection",
+        "message": "Risiko fraud rendah berdasarkan analisis AI"
+      }
+    ],
+    "decision": "ACCEPTED",
+    "decision_reason": "Auto accept (score: 3 < 10)",
+    "auto_reject": false,
+    "requires_review": false
+  },
+  {
+    "claim_id": "CLM-20251121-5069",
+    "timestamp": "2025-11-21T00:11:26.958684",
+    "patient_name": "Umar Kusuma",
+    "faskes_name": "RSUD Tangerang",
+    "diagnosis": "Essential (primary) hypertension",
+    "claim_amount": 2478506,
+    "fraud_scores": {
+      "patient": 0,
+      "faskes": 0,
+      "ai": 85,
+      "total": 85
+    },
+    "red_flags": [
+      {
+        "score": 85,
+        "probability": 0.857,
+        "type": "flex",
+        "flag_name": "AI Fraud Detection",
+        "message": "Risiko fraud tinggi berdasarkan analisis AI"
+      }
+    ],
+    "decision": "REJECTED",
+    "decision_reason": "Auto reject (score: 85 > 60)",
+    "auto_reject": false,
+    "requires_review": false
+  },
+  {
+    "claim_id": "CLM-20251122-3424",
+    "timestamp": "2025-11-22T00:30:42.858956",
+    "patient_name": "Wawan Wibowo",
+    "faskes_name": "Puskesmas Tebet",
+    "diagnosis": "Type 2 diabetes mellitus",
+    "claim_amount": 2019676,
+    "fraud_scores": {
+      "patient": 0,
+      "faskes": 0,
+      "ai": 8,
+      "total": 8
+    },
+    "red_flags": [
+      {
+        "score": 8,
+        "probability": 0.087,
+        "type": "flex",
+        "flag_name": "AI Fraud Detection",
+        "message": "Risiko fraud rendah berdasarkan analisis AI"
+      }
+    ],
+    "decision": "ACCEPTED",
+    "decision_reason": "Auto accept (score: 8 < 10)",
+    "auto_reject": false,
+    "requires_review": false
+  },
+  {
+    "claim_id": "CLM-20251122-3812",
+    "timestamp": "2025-11-22T00:32:42.797106",
+    "patient_name": "Rina Wibowo",
+    "faskes_name": "Klinik Pratama Husada",
+    "diagnosis": "Myalgia",
+    "claim_amount": 530994,
+    "fraud_scores": {
+      "patient": 0,
+      "faskes": 0,
+      "ai": 8,
+      "total": 8
+    },
+    "red_flags": [
+      {
+        "score": 8,
+        "probability": 0.087,
+        "type": "flex",
+        "flag_name": "AI Fraud Detection",
+        "message": "Risiko fraud rendah berdasarkan analisis AI"
+      }
+    ],
+    "decision": "ACCEPTED",
+    "decision_reason": "Auto accept (score: 8 < 10)",
+    "auto_reject": false,
     "requires_review": false
   }
 ]

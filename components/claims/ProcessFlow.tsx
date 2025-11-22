@@ -4,7 +4,7 @@ import { cn } from "@/app/utils"
 import { CheckCircle, XCircle, AlertTriangle, ArrowRight, Activity, FileText, User, Building, Brain } from "lucide-react"
 
 interface ProcessFlowProps {
-    status: "Diterima" | "Ditolak" | "Review"
+    status: "Diterima" | "Ditolak" | "Review" | "Review Diterima" | "Review Ditolak"
     score: number
 }
 
@@ -12,8 +12,8 @@ export function ProcessFlow({ status, score }: ProcessFlowProps) {
     const getStepStatus = (step: string) => {
         // Logic to determine if a step is active/completed/error based on overall status and score
         // This is a simplified logic for the demo
-        if (status === "Ditolak" && step === "reject") return "error"
-        if (status === "Diterima" && step === "accept") return "success"
+        if ((status === "Ditolak" || status === "Review Ditolak") && step === "reject") return "error"
+        if ((status === "Diterima" || status === "Review Diterima") && step === "accept") return "success"
         if (status === "Review" && step === "review") return "warning"
         return "default"
     }
@@ -109,10 +109,10 @@ export function ProcessFlow({ status, score }: ProcessFlowProps) {
                 <div className="grid grid-cols-3 gap-4">
                     <div className={cn(
                         "flex flex-col items-center rounded-lg border p-4 transition-all",
-                        status === "Diterima" ? "border-emerald-500 bg-emerald-50 ring-2 ring-emerald-500 dark:border-emerald-600 dark:bg-emerald-950/30 dark:ring-emerald-600" : "border-slate-200 opacity-50 dark:border-slate-700"
+                        (status === "Diterima" || status === "Review Diterima") ? "border-emerald-500 bg-emerald-50 ring-2 ring-emerald-500 dark:border-emerald-600 dark:bg-emerald-950/30 dark:ring-emerald-600" : "border-slate-200 opacity-50 dark:border-slate-700"
                     )}>
-                        <CheckCircle className={cn("mb-2 h-8 w-8", status === "Diterima" ? "text-emerald-600 dark:text-emerald-400" : "text-slate-400")} />
-                        <div className={cn("font-bold", status === "Diterima" && "dark:text-slate-100")}>Terima Klaim</div>
+                        <CheckCircle className={cn("mb-2 h-8 w-8", (status === "Diterima" || status === "Review Diterima") ? "text-emerald-600 dark:text-emerald-400" : "text-slate-400")} />
+                        <div className={cn("font-bold", (status === "Diterima" || status === "Review Diterima") && "dark:text-slate-100")}>Terima Klaim</div>
                         <div className="text-xs text-slate-500 dark:text-slate-400">Score ≤ 10</div>
                     </div>
 
@@ -127,10 +127,10 @@ export function ProcessFlow({ status, score }: ProcessFlowProps) {
 
                     <div className={cn(
                         "flex flex-col items-center rounded-lg border p-4 transition-all",
-                        status === "Ditolak" ? "border-red-500 bg-red-50 ring-2 ring-red-500 dark:border-red-600 dark:bg-red-950/30 dark:ring-red-600" : "border-slate-200 opacity-50 dark:border-slate-700"
+                        (status === "Ditolak" || status === "Review Ditolak") ? "border-red-500 bg-red-50 ring-2 ring-red-500 dark:border-red-600 dark:bg-red-950/30 dark:ring-red-600" : "border-slate-200 opacity-50 dark:border-slate-700"
                     )}>
-                        <XCircle className={cn("mb-2 h-8 w-8", status === "Ditolak" ? "text-red-600 dark:text-red-400" : "text-slate-400")} />
-                        <div className={cn("font-bold", status === "Ditolak" && "dark:text-slate-100")}>Tolak Klaim</div>
+                        <XCircle className={cn("mb-2 h-8 w-8", (status === "Ditolak" || status === "Review Ditolak") ? "text-red-600 dark:text-red-400" : "text-slate-400")} />
+                        <div className={cn("font-bold", (status === "Ditolak" || status === "Review Ditolak") && "dark:text-slate-100")}>Tolak Klaim</div>
                         <div className="text-xs text-slate-500 dark:text-slate-400">Score {'>'} 60</div>
                     </div>
                 </div>

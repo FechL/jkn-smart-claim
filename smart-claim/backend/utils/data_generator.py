@@ -156,7 +156,7 @@ def generate_faskes_id(registered: bool = True) -> str:
     if not registered:
         return f"org-unregistered-{random.randint(1000, 9999)}"
     
-    return f"org-example-{random.randint(100, 999):03d}"
+    return f"org-example-{random.randint(1, 10):03d}"
 
 
 def generate_faskes_name() -> str:

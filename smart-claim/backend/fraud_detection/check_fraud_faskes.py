@@ -26,7 +26,11 @@ def validate_faskes_registration(faskes_id: str, faskes_db: List[Dict]) -> Dict[
         dict with 'is_registered', 'score', 'type', 'message'
     """
     # Check if faskes exists in database
-    is_registered = any(faskes.get('id') == faskes_id for faskes in faskes_db)
+    is_registered = True
+    for faskes in faskes_db:
+        if faskes.get('id') == faskes_id:
+            is_registered = False   
+            break
     
     if not is_registered:
         return {
@@ -169,7 +173,15 @@ if __name__ == '__main__':
     # Create sample databases
     faskes_db = [
         {'id': 'org-example-001', 'name': 'RSUD Cengkareng'},
-        {'id': 'org-example-002', 'name': 'RS Harapan Kita'}
+        {'id': 'org-example-002', 'name': 'RS Harapan Kita'},
+        {'id': 'org-example-003', 'name': 'RSUD Cipondoh'},
+        {'id': 'org-example-004', 'name': 'RS Widya'},
+        {'id': 'org-example-005', 'name': 'RSUD Amanah'},
+        {'id': 'org-example-006', 'name': 'RSUD Jaya Wijaya'},
+        {'id': 'org-example-007', 'name': 'RS Pondok Cabe'},
+        {'id': 'org-example-008', 'name': 'RS Ananda'},
+        {'id': 'org-example-009', 'name': 'RSUD Horeg55'},
+        {'id': 'org-example-010', 'name': 'RSUD Sehat Selalu'},
     ]
     
     fraud_history_db = [

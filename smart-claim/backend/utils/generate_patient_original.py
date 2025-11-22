@@ -175,8 +175,8 @@ def generate_ml_data(quality: int, patient_id: str) -> dict:
         abnormal_labs = diagnosis['severity'] == 'severe'
     elif quality == 2:
         # Medium: some inconsistencies
-        abnormal_vitals = random.choice([True, False])
         abnormal_labs = random.choice([True, False])
+        abnormal_vitals = random.choice([True, False])
     else:
         # Bad: major inconsistencies (mild diagnosis but severe labs, etc.)
         abnormal_vitals = random.choice([True, True, False])
